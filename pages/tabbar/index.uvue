@@ -1,0 +1,217 @@
+<template>
+	<view class="tabs">
+		<m-navbar :title="title"></m-navbar>
+		<view ref="tabview" class="tab-view">
+			<home ref="home" v-if="tabList[0].init" v-show="selectedIndex==0"></home>
+			<category ref="category" v-if="tabList[1].init" v-show="selectedIndex==1"></category>
+			<media ref="media" v-if="tabList[2].init" v-show="selectedIndex==2"></media>
+			<cart ref="cart" v-if="tabList[3].init" v-show="selectedIndex==3"></cart>
+			<mine ref="mine" v-if="tabList[4].init" v-show="selectedIndex==4"></mine>
+		</view>
+		<view ref="tabbar" class="tab-bar">
+			<view class="tab-item" @click="onTabClick(i)" v-for="(item, i) in tabList" :key="i">
+				<view ref="tab-item1" class="tab-item-content d-flex a-center j-center flex-column">
+					<!-- <image v-if="displayArrow" class="tab-image" :src="item.image">
+					</image> -->
+					<image v-if="!displayArrow" class="tab-select-image" :src="selectedIndex==i ? item.selectImage:item.image"></image>
+					<text v-if="!displayArrow" class="tab-item-text"
+						:class="selectedIndex==i ? 'tab-item-text-active' : ''">
+						{{item.name}}
+					</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	import home from './home/index.uvue';
+	import category from './category/index.uvue';
+	import media from './media/index.uvue';
+	import cart from './cart/index.uvue';
+	import mine from './mine/index.uvue';
+	import MNavbar from '@/components/m-navbar/index.uvue'
+
+	type TabItem = {
+		init : boolean,
+		name : string,
+		image : string,
+		selectImage : string,
+		preload : boolean,
+	}
+
+	export default {
+		components: {
+			home,
+			category,
+			media,
+			cart,
+			mine,
+			MNavbar
+		},
+		data() {
+			return {
+				title: '首页',
+				tabList: [
+					{
+						init: false,
+						name: '首页',
+						image: '/static/img/tabbar/home.png',
+						selectImage: '/static/img/tabbar/home-active.png',
+					} as TabItem,
+					{
+						init: false,
+						name: '分类',
+						image: '/static/img/tabbar/kind.png',
+						selectImage: '/static/img/tabbar/kind-active.png',
+					} as TabItem,
+					{
+						init: false,
+						name: '娱乐',
+						image: '/static/img/tabbar/media.png',
+						selectImage: '/static/img/tabbar/media-active.png',
+					} as TabItem,
+					{
+						init: false,
+						name: '购物车',
+						image: '/static/img/tabbar/cart.png',
+						selectImage: '/static/img/tabbar/cart-active.png',
+					} as TabItem,
+					{
+						init: false,
+						name: '我的',
+						image: '/static/img/tabbar/mine.png',
+						selectImage: '/static/img/tabbar/mine-active.png',
+					} as TabItem,
+				] as TabItem[],
+				selectedIndex: -1,
+				displayArrow: false,
+				$tabViewHeight: 0
+			}
+		},
+		onLoad() {
+			uni.$on('tabchange', this.onTabPageEvent)
+		},
+		onReady() {
+			this.setSelectedIndex(0)
+			this.$tabViewHeight = (this.$refs["tabview"] as Element).getBoundingClientRect().height
+		},
+		onUnload() {
+			uni.$off('tabchange', this.onTabPageEvent)
+		},
+		methods: {
+			onTabClick(index : number) {
+				this.setSelectedIndex(index);
+				if(index == 0) {
+					this.title = '首页'
+				}else if (index == 1) {
+					this.title = '分类'
+				}else if (index == 2) {
+					this.title = '娱乐'
+				}else if (index == 3) {
+					this.title = '购物车'
+				}else if (index == 4) {
+					this.title = '我的'
+				}
+			},
+			onTabPageEvent(top : number) {
+				this.displayArrow = top > this.$tabViewHeight
+			},
+			setSelectedIndex(index : number) {
+				if (this.selectedIndex === index) {
+					return
+				}
+				if (!this.tabList[index].init) {
+					this.tabList[index].init = true
+				}
+				this.selectedIndex = index
+			}
+		}
+	}
+</script>
+
+<style>
+	.tabs {
+		flex: 1;
+		background-color: #fff;
+		overflow: visible;
+	}
+
+	.tab-view {
+		flex: 1;
+	}
+
+	.tab-view-item {
+		flex: 1;
+	}
+
+	.tab-bar {
+		border-top: 1px solid #ccc;
+		flex-direction: row;
+		height: 44px;
+		overflow: visible;
+	}
+
+	.tab-item {
+		flex: 1;
+		position: relative;
+		background-color: #fff;
+		overflow: visible;
+	}
+
+	.tab-item-content {
+		margin: auto;
+		transition: transform 0.3s;
+	}
+	.tab-select-image{
+		width: 44rpx;
+		height: 44rpx;
+	}
+
+	.tab-item-icon {
+		color: #ccc;
+		font-size: 12px;
+		text-align: center;
+		margin-bottom: 4px;
+	}
+
+	.tab-item-text {
+		color: #999;
+		font-size: 12px;
+		text-align: center;
+	}
+
+	.tab-item-text-active {
+		color: #fb7299;
+	}
+
+	.tab-item-arrow {
+		font-size: 30px !important;
+		font-weight: bold;
+	}
+
+	.concave-image {
+		height: 56px;
+	}
+
+	.btn-plus {
+		position: absolute;
+		left: 43px;
+		width: 70px;
+		height: 70px;
+		border-radius: 50px;
+		background-color: #FE5722;
+		box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+		/* margin-left: auto;
+    margin-right: auto; */
+		margin-top: -35px;
+		align-items: center;
+		justify-content: center;
+		overflow: visible;
+	}
+
+	.btn-plus-text {
+		color: #fff;
+		font-size: 32px;
+	}
+</style>

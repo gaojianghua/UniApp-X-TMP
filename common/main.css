@@ -1,33 +1,3 @@
-/* 防止图片闪一下 */
-image {
-	will-change: transform
-}
-
-/* scroll-view */
-.scroll-row {
-	width: 100%;
-	white-space: nowrap;
-}
-
-.scroll-row-item {
-	display: inline-block;
-}
-
-body {
-	--primary: #007bff;
-	--secondary: #6c757d;
-	--success: #28a745;
-	--danger: #dc3545;
-	--warning: #ffc107;
-	--info: #17a2b8;
-	--light: #f8f9fa;
-	--dark: #343a40;
-	--muted: #6c757d;
-	--white: #fff;
-	--borderColor: #f5f5f5;
-	--lightmuted: #B2B2B2;
-}
-
 /* 阴影 */
 .shadow-sm {
 	box-shadow: 0 2rpx 4rpx rgba(114, 130, 138, 0.2) !important;
@@ -52,10 +22,6 @@ body {
 
 .position-relative {
 	position: relative;
-}
-
-.position-sticky {
-	position: sticky;
 }
 
 .left-0 {
@@ -132,10 +98,6 @@ body {
 	font-weight: bold !important;
 }
 
-.font-weight-100 {
-	font-weight: 100 !important;
-}
-
 .line-h0 {
 	line-height: 0 !important;
 }
@@ -160,10 +122,6 @@ body {
 	line-height: 3 !important;
 }
 
-.line-through {
-	text-decoration: line-through;
-}
-
 .text-center {
 	text-align: center;
 }
@@ -183,240 +141,6 @@ body {
 	flex-wrap: wrap;
 }
 
-[class*='col-'],
-[class*='span-'],
-[class*='span24-'] {
-	min-height: 1px;
-	box-sizing: border-box !important;
-}
-
-/* 栅栏一 */
-.col-1 {
-	width: 62.5rpx !important;
-}
-
-.col-2 {
-	width: 125rpx !important;
-}
-
-.col-3 {
-	width: 187.5rpx !important;
-}
-
-.col-4 {
-	width: 250rpx !important;
-}
-
-.col-5 {
-	width: 312.5rpx !important;
-}
-
-.col-6 {
-	width: 375rpx !important;
-}
-
-.col-7 {
-	width: 437.5rpx !important;
-}
-
-.col-8 {
-	width: 500rpx !important;
-}
-
-.col-9 {
-	width: 562.5rpx !important;
-}
-
-.col-10 {
-	width: 625rpx !important;
-}
-
-.col-11 {
-	width: 687.5rpx !important;
-}
-
-.col-12 {
-	width: 750rpx !important;
-}
-
-/* 栅栏二 */
-.span-1 {
-	width: 5%;
-}
-
-.span-2 {
-	width: 10%;
-}
-
-.span-3 {
-	width: 15%;
-}
-
-.span-4 {
-	width: 20%;
-}
-
-.span-5 {
-	width: 25%;
-}
-
-.span-6 {
-	width: 30%;
-}
-
-.span-7 {
-	width: 35%;
-}
-
-.span-8 {
-	width: 40%;
-}
-
-.span-9 {
-	width: 45%;
-}
-
-.span-10 {
-	width: 50%;
-}
-
-.span-11 {
-	width: 55%;
-}
-
-.span-12 {
-	width: 60%;
-}
-
-.span-13 {
-	width: 65%;
-}
-
-.span-14 {
-	width: 70%;
-}
-
-.span-15 {
-	width: 75%;
-}
-
-.span-16 {
-	width: 80%;
-}
-
-.span-17 {
-	width: 85%;
-}
-
-.span-18 {
-	width: 90%;
-}
-
-.span-19 {
-	width: 95%;
-}
-
-.span-20 {
-	width: 100%;
-}
-
-/* 栅栏三 */
-.span24-1 {
-	width: 4.17%;
-}
-
-.span24-2 {
-	width: 8.33%;
-}
-
-.span24-3 {
-	width: 12.5%;
-}
-
-.span24-4 {
-	width: 16.67%;
-}
-
-.span24-5 {
-	width: 20.83%;
-}
-
-.span24-6 {
-	width: 25%;
-}
-
-.span24-7 {
-	width: 29.17%;
-}
-
-.span24-8 {
-	width: 33.33%;
-}
-
-.span24-9 {
-	width: 37.5%;
-}
-
-.span24-10 {
-	width: 41.67%;
-}
-
-.span24-11 {
-	width: 45.83%;
-}
-
-.span24-12 {
-	width: 50%;
-}
-
-.span24-13 {
-	width: 54.17%;
-}
-
-.span24-14 {
-	width: 58.33%;
-}
-
-.span24-15 {
-	width: 62.5%;
-}
-
-.span24-16 {
-	width: 66.67%;
-}
-
-.span24-17 {
-	width: 70.83%;
-}
-
-.span24-18 {
-	width: 75%;
-}
-
-.span24-19 {
-	width: 79.17%;
-}
-
-.span24-20 {
-	width: 83.33%;
-}
-
-.span24-21 {
-	width: 87.5%;
-}
-
-.span24-22 {
-	width: 91.67%;
-}
-
-.span24-23 {
-	width: 95.83%;
-}
-
-.span24-24 {
-	width: 100%;
-}
-
 
 /* flex布局 */
 .d-flex {
@@ -425,14 +149,6 @@ body {
 
 .d-none {
 	display: none;
-}
-
-.d-block {
-	display: block;
-}
-
-.d-inline-block {
-	display: inline-block;
 }
 
 .flex-1 {
@@ -491,10 +207,6 @@ body {
 	align-items: flex-end;
 }
 
-.a-base {
-	align-items: baseline;
-}
-
 .a-stretch {
 	align-items: stretch;
 }
@@ -515,249 +227,10 @@ body {
 	align-self: stretch;
 }
 
-.a-self-baseline {
-	align-self: baseline;
-}
-
-/* Border */
-.border {
-	border-width: 1rpx !important;
-	border-style: solid;
-	border-color: var(--borderColor);
-}
-
-.border-top {
-	border-top-width: 1rpx !important;
-	border-top-style: solid;
-	border-top-color: var(--borderColor);
-}
-
-.border-right {
-	border-right-width: 1rpx !important;
-	border-right-style: solid;
-	border-right-color: var(--borderColor);
-}
-
-.border-bottom {
-	border-bottom-width: 1rpx !important;
-	border-bottom-style: solid;
-	border-bottom-color: var(--borderColor);
-}
-
-.border-left {
-	border-left-width: 1rpx !important;
-	border-left-style: solid;
-	border-left-color: var(--borderColor);
-}
-
-.border-0 {
-	border-width: 0;
-}
-
-.border-top-0 {
-	border-top-width: 0;
-}
-
-.border-right-0 {
-	border-right-width: 0;
-}
-
-.border-bottom-0 {
-	border-bottom-width: 0;
-}
-
-.border-left-0 {
-	border-left-width: 0;
-}
-
-.border-primary {
-	border-color: var(--primary) !important
-}
-
-.border-secondary {
-	border-color: var(--secondary) !important
-}
-
-.border-success {
-	border-color: var(--success) !important
-}
-
-.border-danger {
-	border-color: var(--danger) !important
-}
-
-.border-warning {
-	border-color: var(--warning) !important
-}
-
-.border-info {
-	border-color: var(--info) !important
-}
-
-.border-light {
-	border-color: var(--light) !important
-}
-
-.border-dark {
-	border-color: var(--dark) !important
-}
-
-.border-white {
-	border-color: var(--white) !important
-}
-
-.border-light-secondary {
-	border-color: #F1F1F1 !important;
-}
-
-.rounded {
-	border-radius: 5rpx;
-}
-
-.rounded-1 {
-	border-radius: 10rpx;
-}
-
-.rounded-circle {
-	border-radius: 100%;
-}
-
-.rounded-0 {
-	border-radius: 0;
-}
-
-/* color */
-.text-primary {
-	color: var(--primary) !important;
-}
-
-.text-secondary {
-	color: var(--secondary) !important;
-}
-
-.text-success {
-	color: var(--success) !important;
-}
-
-.text-danger {
-	color: var(--danger) !important;
-}
-
-.text-warning {
-	color: var(--warning) !important;
-}
-
-.text-info {
-	color: var(--info) !important;
-}
-
-.text-light {
-	color: var(--light) !important;
-}
-
-.text-dark {
-	color: var(--dark) !important;
-}
-
-.text-muted {
-	color: var(--muted) !important;
-}
-
-.text-light-muted {
-	color: var(--lightmuted) !important;
-}
-
-.text-white {
-	color: var(--white) !important;
-}
-
 /* 文字换行溢出处理 */
 .text-ellipsis1 {
-	/* #ifndef APP-PLUS-NVUE */
 	overflow: hidden;
 	text-overflow: ellipsis;
-	white-space: initial;
-	/* #endif */
-	/* #ifdef APP-PLUS-NVUE */
-	lines: 1;
-	/* #endif */
-	/* 显示多行 */
-	display: -webkit-box;
-	/* 5为显示的行数 */
-	-webkit-line-clamp: 1;
-	-webkit-box-orient: vertical;
-}
-
-.text-ellipsis2 {
-	/* #ifndef APP-PLUS-NVUE */
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: initial;
-	/* #endif */
-	/* #ifdef APP-PLUS-NVUE */
-	lines: 2;
-	/* #endif */
-	/* 显示多行 */
-	display: -webkit-box;
-	/* 5为显示的行数 */
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical;
-}
-
-.text-ellipsis3 {
-	/* #ifndef APP-PLUS-NVUE */
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: initial;
-	/* #endif */
-	/* #ifdef APP-PLUS-NVUE */
-	lines: 3;
-	/* #endif */
-	/* 显示多行 */
-	display: -webkit-box;
-	/* 5为显示的行数 */
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
-}
-
-.bg-primary {
-	background-color: var(--primary);
-}
-
-.bg-secondary {
-	background-color: var(--secondary);
-}
-
-.bg-success {
-	background-color: var(--success);
-}
-
-.bg-danger {
-	background-color: var(--danger);
-}
-
-.bg-warning {
-	background-color: var(--warning);
-}
-
-.bg-info {
-	background-color: var(--info);
-}
-
-.bg-light {
-	background-color: var(--light);
-}
-
-.bg-dark {
-	background-color: var(--dark);
-}
-
-.bg-white {
-	background-color: var(--white);
-}
-
-.bg-light-secondary {
-	background-color: #F1F1F1;
 }
 
 /* Spacing */
@@ -1409,47 +882,6 @@ body {
 	transform: rotate(360deg);
 }
 
-/* 图片 */
-video, image {
-	display: block;
-}
-
-/* 透明滚动条 */
-::-webkit-scrollbar {
-	width: 0;
-	height: 0;
-	color: transparent !important;
-}
-
-button::after {
-	border: none;
-}
-
-button {
-	background-color: transparent;
-	margin-left: 0;
-	margin-right: 0;
-	padding-left: 0;
-	padding-right: 0;
-	line-height: inherit;
-	border-radius: 0;
-}
-
 .hidden {
 	overflow: hidden;
-}
-
-.normal{
-	white-space: normal;
-}
-
-.initial{
-	white-space: initial;
-}
-
-/* 文字竖排显示 */
-.text-column{
-	writing-mode: vertical-rl;
-	text-orientation: upright;
-	letter-spacing: 6rpx;
 }

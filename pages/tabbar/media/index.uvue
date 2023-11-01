@@ -1,6 +1,6 @@
 <template>
 	<view>
-		
+		<text>娱乐</text>
 	</view>
 </template>
 

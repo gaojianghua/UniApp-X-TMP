@@ -9,6 +9,7 @@
 node_modules/
 .node_modules/
 .eslintcache
+unpackage/
 unpackage/dist/build/
 unpackage/dist/dev/
 

@@ -33,7 +33,6 @@
 </script>
 
 <style>
-@import "./common/uni.css";
 @import "./common/main.css";
 @import "./common/common.css";
 </style>
