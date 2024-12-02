@@ -33,6 +33,7 @@
 </script>
 
 <style>
-@import url("common/main.css");
-@import url("common/common.css");
+@import "@/common/icon.css";
+@import "@/common/main.css";
+@import "@/common/common.css";
 </style>
